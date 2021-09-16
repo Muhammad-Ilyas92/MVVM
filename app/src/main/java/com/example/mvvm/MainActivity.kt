@@ -95,6 +95,25 @@ import android.os.Bundle
 // hm jetpack ki website m ja k us library ko apne app m use kr sakengay
 
 
+//LIFE CYCLE AWARE COMPONENTS
+//is s pehle hm actvity mein ONCREATE, ONSTART, ONSTOP use kr rhe the us k nuqssan y ho rha tha k ahamri activity aik s zyada bar kam kr rhe the.
+//activity ka main kam view ko render krna hai , or user k view ko manage krna hai.
+//activity m hamein pta hona chaye k ONCREATE method chal rha ya activity m knsa event ya method chal rha.
+//us k lye AWARE COMPONENTS aatay hein
+//aj tk hm activity m y dekhte aye hein k agr hm n image download krne h to usko ONCREATE k method m use kreingay r back krne p hm ONSTOP jesa method use krte rahe hein
+//or ise trhan jb hm video play krte hein to wo ONCREATE method m hoti h, r jb user back button dabata h to video pause hojati h to us k lya hm ONPAUSE  method ko call krte hein.
+// yahan pr kuch aese scenerio hote hien jis m mjhy activity k lifecycle k baray m pta hona chaye, life cycle kis event p h us k according mjhy kuch actions perform krne hein
+//jaise k mjhy ONPAUSE m b kuch code lkhna h ONRESUME p b kuch code lkha h or ab y code m activity m nh lkhna chahta
+// to isse ko solve krne k lye hamaray pas LIFE CYCLE AWARE COMPONETS hein
+// is m hamare pas 2 cheezen hoti hein
+// 1. LIFE CYCLE OWNER (wo jo lifecycle ko own kre)
+// 2  LIFE CYCLE OBSERVER  (wo jo lifecycle ko observe krein, aese components jo dusro k components ko observe krein )
+// hm n LIFECYCLE OBSERVER OR LIFECYCLE OWNER K DARMIYAN OBSERVER bitha diya
+// LIFECYCLE OBSERVER ->  OBSERVER -> LIFECYCLE OWNER
+// jaise jaise activity ki lifecycle change hogi  wese he lifecycle observer m method call hongay
+//is s y hoga k lifecycle observer ka code separate hojayega
+
+
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
